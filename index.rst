@@ -29,3 +29,9 @@ In this workshop, we will explore the different types of recommendation systems 
    intro.rst
 
 
+.. toctree::
+    :maxdepth: 1
+    :caption: Tutorials:
+
+    tutorial.ipynb
+
