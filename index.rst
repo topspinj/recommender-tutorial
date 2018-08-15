@@ -15,23 +15,21 @@ Tutorial requirements
 - numpy 
 - scikit-learn
 
-Alternatively, you can also use Google’s new `colab platform <https://colab.research.google.com/>`_ which allows you to run a Jupiter notebook environment in the cloud. You won't need to locally install any of the above; however, you will need a gmail account. 
+Alternatively, you can also use Google’s new `colab platform <https://colab.research.google.com/>`_ which allows you to run a Jupyter notebook environment in the cloud. You won't need to locally install any of the above; however, you will need a gmail account. 
 
 
 Description
 -----------
-In this workshop, we will explore the different types of recommendation systems and their implementations. We will also build our own recommendation system using data from the `MovieLens <https://movielens.org//>`_  database.
+In this tutorial, we will explore the different types of recommendation systems and their implementations. We will also build our own recommendation system using data from the `MovieLens <https://movielens.org//>`_  database.
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Tutorials:
+
+    part-1-building-from-scratch.ipynb
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    intro.rst
-
-
-.. toctree::
-    :maxdepth: 1
-    :caption: Tutorials:
-
-    tutorial.ipynb
-
