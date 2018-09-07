@@ -18,4 +18,8 @@ Alternatively, you can also use Google’s new [colab platform](https://colab.re
 
 In this tutorial, we will explore different types of recommendation systems and their implementations. We will build our own recommendation system using data from the [MovieLens](https://movielens.org/) database and tools from scikit-learn.
 
-See PyLadies presentation slides [here](pyladies-slides.pdf).
+### Slides
+
+- [Part 1: An intro to recommendation systems](pyladies-slides.pdf) (PyLadies workshop)
+
+
