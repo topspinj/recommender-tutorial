@@ -3,9 +3,10 @@
 This series of tutorials explores different types of recommendation systems and their implementations. Key topics include:
 - collaborative vs. content-based filtering
 - implicit vs. explicit feedback
-- recommendation model evaluation
+- handling the cold start problem
+- evaluating recommendation models
 
-We will build our own recommendation systems using data from the [MovieLens](https://movielens.org/) database.
+We will build various recommendation systems using data from the [MovieLens](https://movielens.org/) database. You will need Jupyter Lab to run the notebooks for each part of this series. Alternatively, you can also use Google’s new [colab platform](https://colab.research.google.com) which allows you to run a Jupyter notebook environment in the cloud. You won't need to install any local dependencies; however, you will need a gmail account. 
 
 ### Part 1: Building a recommendation system from scratch
 
@@ -20,8 +21,6 @@ In this tutorial, we will build an item-item recommendation system by computing 
 - matplotlib
 - seaborn
 - scikit-learn
-
-Alternatively, you can also use Google’s new [colab platform](https://colab.research.google.com) which allows you to run a Jupyter notebook environment in the cloud. You won't need to locally install any of the above; however, you will need a gmail account. 
 
 ### Part 2: Predicting user ratings
 
@@ -47,13 +46,13 @@ In this tutorial, we will employ clustering techniques to tackle the cold start 
 - pandas
 - scikit-learn
 
-### Part 4: Recommendation systems for implicit feedback
+### Part 4: Building an implicit-feedback recommendation system
 
-TBD 
+TBA
 
-### Part 5: Evaluating the performance of a recommendation system
+### Part 5: Evaluating the performance of a recommendation model
 
-TBD
+TBA
 
 ### Slides
 
