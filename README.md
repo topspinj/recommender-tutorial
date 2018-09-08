@@ -4,13 +4,22 @@ This series of tutorials explores different types of recommendation systems and 
 - collaborative vs. content-based filtering
 - implicit vs. explicit feedback
 - handling the cold start problem
-- evaluating recommendation models
+- recommendation model evaluation
 
 We will build various recommendation systems using data from the [MovieLens](https://movielens.org/) database. You will need Jupyter Lab to run the notebooks for each part of this series. Alternatively, you can also use Google’s new [colab platform](https://colab.research.google.com) which allows you to run a Jupyter notebook environment in the cloud. You won't need to install any local dependencies; however, you will need a gmail account. 
 
-### Part 1: Building a recommendation system from scratch
+The series is divided into 5 parts:
+- [Part 1: Building an item-item recommendation system from scratch](#part-1)
+- Part 2: Predicting user ratings
+- Part 3: Handling the cold start problem
+- Part 4: Building an implicit-feedback recommendation system
+- Part 5: Evaluating the performance of a recommendation model
 
-In this tutorial, we will build an item-item recommendation system by computing similarity using nearest neighbour techniques.
+More information on each part can be found in the descriptions below.
+
+### Part 1: Building an item-item recommendation system from scratch
+
+In this tutorial, we will build an item-item recommendation system by computing similarity using nearest neighbor techniques.
 
 **Requirements:**
 
