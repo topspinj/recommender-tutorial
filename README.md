@@ -9,11 +9,11 @@ This series of tutorials explores different types of recommendation systems and 
 We will build various recommendation systems using data from the [MovieLens](https://movielens.org/) database. You will need Jupyter Lab to run the notebooks for each part of this series. Alternatively, you can also use Google’s new [colab platform](https://colab.research.google.com) which allows you to run a Jupyter notebook environment in the cloud. You won't need to install any local dependencies; however, you will need a gmail account. 
 
 The series is divided into 5 parts:
-- [Part 1: Building an item-item recommendation system from scratch](#part-1)
-- Part 2: Predicting user ratings
-- Part 3: Handling the cold start problem
-- Part 4: Building an implicit-feedback recommendation system
-- Part 5: Evaluating the performance of a recommendation model
+1. [Building an item-item recommendation system from scratch](#part-1-building-an-item-item-recommendation-system-from-scratch)
+2. [Predicting user ratings](#part-2-predicting-user-ratings)
+3. [Handling the cold start problem](#part-3-handling-the-cold-start-problem)
+4. [Building an implicit-feedback recommendation system](#part-4-building-an-implicit-feedback-recommendation-system)
+5. [Evaluating the performance of a recommendation model](#part-5-evaluating-the-performance-of-a-recommendation-model) 
 
 More information on each part can be found in the descriptions below.
 
