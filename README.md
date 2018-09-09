@@ -1,6 +1,7 @@
 # Recommendation Systems 101
 
-This series of tutorials explores different types of recommendation systems and their implementations. Key topics include:
+This series of tutorials explores different types of recommendation systems and their implementations. Topics include:
+
 - collaborative vs. content-based filtering
 - implicit vs. explicit feedback
 - handling the cold start problem
@@ -9,6 +10,7 @@ This series of tutorials explores different types of recommendation systems and 
 We will build various recommendation systems using data from the [MovieLens](https://movielens.org/) database. You will need Jupyter Lab to run the notebooks for each part of this series. Alternatively, you can also use Google’s new [colab platform](https://colab.research.google.com) which allows you to run a Jupyter notebook environment in the cloud. You won't need to install any local dependencies; however, you will need a gmail account. 
 
 The series is divided into 5 parts:
+
 1. [Building an item-item recommendation system from scratch](#part-1-building-an-item-item-recommendation-system-from-scratch)
 2. [Predicting user ratings](#part-2-predicting-user-ratings)
 3. [Handling the cold start problem](#part-3-handling-the-cold-start-problem)
@@ -19,52 +21,64 @@ More information on each part can be found in the descriptions below.
 
 ### Part 1: Building an item-item recommendation system from scratch
 
-In this tutorial, we will build an item-item recommendation system by computing similarity using nearest neighbor techniques.
-
-**Requirements:**
-
-- Python 3.6+
-- Jupyter Lab
-- numpy
-- pandas
-- matplotlib
-- seaborn
-- scikit-learn
+| |Description |
+|:-----------|:----------|
+|Objective|We will build an item-item recommendation system by computing similarity using nearest neighbor techniques.|
+|Key concepts|collaborative filtering, content-based filtering, k-Nearest neighbors, cosine similarity|
+|Skill level|Intermediate Python|
+|Requirements|Python 3.6+, Jupyter Lab, numpy, pandas, matplotlib, seaborn, scikit-learn|
+|Tutorial link|[see here](part-1-building-from-scratch.ipynb)|
+|Relevant slides|[see here](pyladies-slides.pdf)|
+|Resources|[Item-item collaborative filtering](https://www.wikiwand.com/en/Item-item_collaborative_filtering)|
 
 ### Part 2: Predicting user ratings
 
-In this tutorial, we will attempt to predict how a user would rate a new movie based on their previous ratings. 
+| |Description |
+|:-----------|:----------|
+|Objective|We will attempt to predict how a user would rate a new movie based on their previous ratings. |
+|Key concepts|collaborative filtering, matrix factorization, singular-value decomposition|
+|Skill level|Intermediate Python|
+|Requirements|TBA|
+|Tutorial link|TBA|
 
-**Requirements:**
-
-- Python 3.6+
-- Jupyter Lab
-- numpy
-- pandas
-- scikit-learn
 
 ### Part 3: Handling the cold start problem
 
-In this tutorial, we will employ clustering techniques to tackle the cold start problem of collaborative filtering. 
+| |Description |
+|:-----------|:----------|
+|Objective|Collaborative filtering fails to incorporate new users who haven't rated yet and new items that don't have any ratings or reviews. This is called the cold start problem. In this tutorial, we will learn about clustering techniques that are used to tackle the cold start problem of collaborative filtering.|
+|Key concepts|k-means clustering, DBSCAN|
+|Skill level|Intermediate Python|
+|Requirements|TBA|
+|Tutorial link|TBA|
+|Resources|[Cold Start and Hybrid Recommender Systems](https://www.youtube.com/watch?v=wEbatX4J-1g)|
 
-**Requirements:**
-
-- Python 3.6+
-- Jupyter Lab
-- numpy
-- pandas
-- scikit-learn
 
 ### Part 4: Building an implicit-feedback recommendation system
 
-TBA
+| |Description |
+|:-----------|:----------|
+|Objective|Unlike explicit feedback (e.g., user ratings), implicit feedback infers a user's degree of preference toward an item by looking at their indirect interactions with that item. In this tutorial, we will investigate two recommendation models that specifically handle implicit feedback datasets.|
+|Key concepts|implicit feedback, matrix factorization, alternating least squares, learning to rank|
+|Skill level|Intermediate Python|
+|Requirements|TBA|
+|Tutorial link|TBA|
+|Resources|[A Gentle Introduction to Recommender Systems with Implicit Feedback](https://jessesw.com/Rec-System/), [Collaborative Filtering for Implicit Feedback Datasets](http://yifanhu.net/PUB/cf.pdf), [Xavier Amatriain lecture](https://www.youtube.com/watch?v=bLhq63ygoU8)|
+
 
 ### Part 5: Evaluating the performance of a recommendation model
 
-TBA
+| |Description |
+|:-----------|:----------|
+|Objective|How do we measure the quality of a recommendation? In this tutorial, we will investigate offline evaluation metrics that assess the performance of recommendation systems.|
+|Key concepts|evaluation, accuracy, precision, recall, F1|
+|Skill level|Intermediate Python|
+|Requirements|TBA|
+|Tutorial link|TBA|
+
 
 ### Slides
 
-- [Part 1: An intro to recommendation systems](pyladies-slides.pdf) (PyLadies workshop)
+- [An intro to recommendation systems](pyladies-slides.pdf) (PyLadies workshop)
 
 
