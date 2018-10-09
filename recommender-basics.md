@@ -29,7 +29,7 @@ A major disadvantage of collaborative filtering is the **cold start problem**. Y
 
 ### Content-based Filtering
 
-Content-based filtering is a type of supervised learning that generates recommendations based on user and item features. Given a set of item features (movie genre, release date, country, language, etc.), it predicts how a user will rate an item based on their ratings of previous movies. 
+Content-based filtering generates recommendations based on user and item features. Given a set of item features (movie genre, release date, country, language, etc.), it predicts how a user will rate an item based on their ratings of previous movies. 
 
 Content-based filtering handles the "cold start" problem because it is able to provide personalized recommendations for brand new users and features. 
 
