@@ -11,9 +11,9 @@ We will build various recommendation systems using data from the [MovieLens](htt
 
 The series is divided into 5 parts:
 
-1. [Building an item-item recommendation system from scratch](#part-1-building-an-item-item-recommendation-system-from-scratch)
-2. [Predicting user ratings](#part-2-predicting-user-ratings)
-3. [Handling the cold start problem](#part-3-handling-the-cold-start-problem)
+1. [Building an item-item recommender with collaborative filtering](#part-1-building-an-item-item-recommender-with-collaborative-filtering)
+2. [Handling the Cold Start Problem with Content-based Filtering](#part-2-handling-the-cold-start-problem-with-content-based-filtering)
+3. [Enhancing the Quality of Recommendations with Matrix Factorizationm](#part-3-enhancing-the-quality-of-recommendations-with-matrix-factorization)
 4. [Building an implicit-feedback recommendation system](#part-4-building-an-implicit-feedback-recommendation-system)
 5. [Evaluating the performance of a recommendation model](#part-5-evaluating-the-performance-of-a-recommendation-model) 
 
