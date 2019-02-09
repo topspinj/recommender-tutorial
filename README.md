@@ -25,7 +25,6 @@ More information on each part can be found in the descriptions below.
 |:-----------|:----------|
 |Objective|Want to know how Spotify, Amazon, and Netflix generate "similar item" recommendations for users? In this tutorial, we will build an item-item recommendation system by computing similarity using nearest neighbor techniques.|
 |Key concepts|collaborative filtering, content-based filtering, k-Nearest neighbors, cosine similarity|
-|Skill level|Intermediate Python|
 |Requirements|Python 3.6+, Jupyter Lab, numpy, pandas, matplotlib, seaborn, scikit-learn|
 |Tutorial link|[Jupyter Notebook](part-1-item-item-recommender.ipynb)|
 |Relevant slides|[slides here](https://github.com/topspinj/presentations/recommendation-systems)|
@@ -37,7 +36,6 @@ More information on each part can be found in the descriptions below.
 |:-----------|:----------|
 |Objective|Collaborative filtering fails to incorporate new users who haven't rated yet and new items that don't have any ratings or reviews. This is called the cold start problem. In this tutorial, we will learn about clustering techniques that are used to tackle the cold start problem of collaborative filtering.|
 |Key concepts|k-means clustering, DBSCAN|
-|Skill level|Intermediate Python|
 |Requirements|Python 3.6+, pandas, scikit-learn|
 |Tutorial link|[Jupyter Notebook](part-2-cold-start-problem.ipynb)|
 |Resources|[Cold Start and Hybrid Recommender Systems](https://www.youtube.com/watch?v=wEbatX4J-1g)|
@@ -48,7 +46,6 @@ More information on each part can be found in the descriptions below.
 |:-----------|:----------|
 |Objective|Reduce the dimensions of the user-item matrix using matrix factorization.|
 |Key concepts|k-means clustering, DBSCAN|
-|Skill level|Intermediate Python|
 |Requirements|Python 3.6+, pandas, scikit-learn|
 |Tutorial link|[Jupyter Notebook](part-3-matrix-factorizationipynb)|
 |Resources|Coming soon|
@@ -60,7 +57,6 @@ More information on each part can be found in the descriptions below.
 |:-----------|:----------|
 |Objective|Unlike explicit feedback (e.g., user ratings), implicit feedback infers a user's degree of preference toward an item by looking at their indirect interactions with that item. In this tutorial, we will investigate two recommendation models that specifically handle implicit feedback datasets.|
 |Key concepts|implicit feedback, matrix factorization, alternating least squares, learning to rank|
-|Skill level|Intermediate Python|
 |Requirements|TBA|
 |Tutorial link|TBA|
 |Resources|[A Gentle Introduction to Recommender Systems with Implicit Feedback](https://jessesw.com/Rec-System/), [Collaborative Filtering for Implicit Feedback Datasets](http://yifanhu.net/PUB/cf.pdf), [Xavier Amatriain lecture](https://www.youtube.com/watch?v=bLhq63ygoU8)|
@@ -72,7 +68,6 @@ More information on each part can be found in the descriptions below.
 |:-----------|:----------|
 |Objective|How do we measure the quality of a recommendation? In this tutorial, we will investigate offline evaluation metrics that assess the performance of recommendation systems.|
 |Key concepts|evaluation, accuracy, precision, recall, F1|
-|Skill level|Intermediate Python|
 |Requirements|TBA|
 |Tutorial link|TBA|
 
