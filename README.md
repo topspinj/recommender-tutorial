@@ -30,48 +30,6 @@ More information on each part can be found in the descriptions below.
 |Relevant slides|[slides here](https://github.com/topspinj/presentations/recommendation-systems)|
 |Resources|[Item-item collaborative filtering](https://www.wikiwand.com/en/Item-item_collaborative_filtering), [Amazon.com Recommendations](https://www.cs.umd.edu/~samir/498/Amazon-Recommendations.pdf), [Various Implementations of Collaborative Filtering](https://towardsdatascience.com/various-implementations-of-collaborative-filtering-100385c6dfe0) |
 
-### Part 2: Handling the Cold Start Problem with Content-based Filtering
-
-| |Description |
-|:-----------|:----------|
-|Objective|Collaborative filtering fails to incorporate new users who haven't rated yet and new items that don't have any ratings or reviews. This is called the cold start problem. In this tutorial, we will learn about clustering techniques that are used to tackle the cold start problem of collaborative filtering.|
-|Key concepts|k-means clustering, DBSCAN|
-|Requirements|Python 3.6+, pandas, scikit-learn|
-|Tutorial link|[Jupyter Notebook](part-2-cold-start-problem.ipynb)|
-|Resources|[Cold Start and Hybrid Recommender Systems](https://www.youtube.com/watch?v=wEbatX4J-1g)|
-
-### Part 3: Enhancing the Quality of Recommendations with Matrix Factorization
-
-| |Description |
-|:-----------|:----------|
-|Objective|Reduce the dimensions of the user-item matrix using matrix factorization.|
-|Key concepts|k-means clustering, DBSCAN|
-|Requirements|Python 3.6+, pandas, scikit-learn|
-|Tutorial link|[Jupyter Notebook](part-3-matrix-factorizationipynb)|
-|Resources|Coming soon|
-
-
-### Part 4: Building an implicit-feedback recommendation system
-
-| |Description |
-|:-----------|:----------|
-|Objective|Unlike explicit feedback (e.g., user ratings), implicit feedback infers a user's degree of preference toward an item by looking at their indirect interactions with that item. In this tutorial, we will investigate two recommendation models that specifically handle implicit feedback datasets.|
-|Key concepts|implicit feedback, matrix factorization, alternating least squares, learning to rank|
-|Requirements|TBA|
-|Tutorial link|TBA|
-|Resources|[A Gentle Introduction to Recommender Systems with Implicit Feedback](https://jessesw.com/Rec-System/), [Collaborative Filtering for Implicit Feedback Datasets](http://yifanhu.net/PUB/cf.pdf), [Xavier Amatriain lecture](https://www.youtube.com/watch?v=bLhq63ygoU8)|
-
-
-### Part 5: Evaluating the performance of a recommendation model
-
-| |Description |
-|:-----------|:----------|
-|Objective|How do we measure the quality of a recommendation? In this tutorial, we will investigate offline evaluation metrics that assess the performance of recommendation systems.|
-|Key concepts|evaluation, accuracy, precision, recall, F1|
-|Requirements|TBA|
-|Tutorial link|TBA|
-
-
 ### Slides
 
 - [A Brief Intro to Recommendation Systems](https://github.com/topspinj/presentations/recommendation-systems) (PyLadies workshop)
