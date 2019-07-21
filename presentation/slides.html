@@ -13756,6 +13756,7 @@ Honey, I Shrunk the Kids (1989)
 </ul>
 </li>
 </ul>
+<p><img src="images/matrix-factorization.png"/></p>
 
 </div>
 </div>
@@ -13764,31 +13765,336 @@ Honey, I Shrunk the Kids (1989)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Matrix-Factorization">Matrix Factorization<a class="anchor-link" href="#Matrix-Factorization">&#182;</a></h3><p>Matrix factorization is defined as such:</p>
-<p>$$X_{mn} \approx P_{mk} \times Q_{nk}^T = \hat{X}$$</p>
-<p>where $m$ represents number of movies, $n$ represents number of users, and $k$ represents latent features.
-<img src="images/matrix-factorization.png"/></p>
+<h3 id="Singular-Value-Decomposition">Singular Value Decomposition<a class="anchor-link" href="#Singular-Value-Decomposition">&#182;</a></h3><ul>
+<li>Singular Value Decomposition (SVD) is a type of matrix factorization that is used for data reduction and de-noising </li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html">scikit-learn</a> has a class called <code>TruncatedSVD</code> that we can use to reduce our matrix from <code>(n_users, n_movies)</code> to <code>(n_users, n_components)</code> where <code>n_components</code> represents number of latent features. </li>
+</ul>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[148]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="k">import</span> <span class="n">TruncatedSVD</span>
-<span class="n">new_X</span> <span class="o">=</span> <span class="n">svd</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 
-<span class="n">svd</span> <span class="o">=</span> <span class="n">TruncatedSVD</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">svd</span> <span class="o">=</span> <span class="n">TruncatedSVD</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">Z</span> <span class="o">=</span> <span class="n">svd</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;The shape of our compressed Z matrix is: </span><span class="si">{Z.shape}</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-</div></section></section>
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The shape of our compressed Z matrix is: (610, 25).
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's apply our <code>find_similar_movies</code> function to our new Z matrix.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[149]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">movie_id</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">similar_movies</span> <span class="o">=</span> <span class="n">find_similar_movies</span><span class="p">(</span><span class="n">movie_id</span><span class="p">,</span> <span class="n">X</span><span class="o">=</span><span class="n">Z</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;cosine&#39;</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">movie_title</span> <span class="o">=</span> <span class="n">movie_titles</span><span class="p">[</span><span class="n">movie_id</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Because you watched </span><span class="si">{movie_title}</span><span class="s2">:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">similar_movies</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">movie_titles</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Because you watched Toy Story (1995):
+Powder (1995)
+Sabrina (1995)
+Ace Ventura: When Nature Calls (1995)
+Get Shorty (1995)
+Casino (1995)
+Four Rooms (1995)
+Nixon (1995)
+Copycat (1995)
+Money Train (1995)
+Assassins (1995)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When we reduce the dimensions of our original user-item matrix to <code>(n_users, 30)</code>, we get the recommendations shown above.</p>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Top-N-Recommender">Top N Recommender<a class="anchor-link" href="#Top-N-Recommender">&#182;</a></h3><ul>
+<li>Matrix factorization allows us to predict missing ratings in our original $X$ matrix</li>
+<li>Reconstruct matrix by getting inner product of the user-factor matrix  and movie-factor matrix</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[150]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_X</span> <span class="o">=</span> <span class="n">svd</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Dimensions of original user-item matrix: </span><span class="si">{X.shape}</span><span class="s2">, {type(X)}&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Dimensions of SVD-reconstructed X matrix: </span><span class="si">{new_X.shape}</span><span class="s2">, {type(new_X)}&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Dimensions of original user-item matrix: (9724, 610), &lt;class &#39;scipy.sparse.csr.csr_matrix&#39;&gt;
+Dimensions of SVD-reconstructed X matrix: (9724, 610), &lt;class &#39;numpy.ndarray&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's try generaing top N recommendations for a user in our dataset. We'll look at <code>userId</code> 5. Which movies did this user rate highly?</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[156]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">userId</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">user_preferences</span> <span class="o">=</span> <span class="n">ratings</span><span class="p">[(</span><span class="n">ratings</span><span class="p">[</span><span class="s1">&#39;userId&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">userId</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">ratings</span><span class="p">[</span><span class="s1">&#39;rating&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">user_preferences</span> <span class="o">=</span> <span class="n">user_preferences</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">movies</span><span class="p">[[</span><span class="s1">&#39;movieId&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">]])</span>
+<span class="n">user_preferences</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;rating&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[156]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>userId</th>
+      <th>movieId</th>
+      <th>rating</th>
+      <th>timestamp</th>
+      <th>title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>11</th>
+      <td>5</td>
+      <td>296</td>
+      <td>5.0</td>
+      <td>847434748</td>
+      <td>Pulp Fiction (1994)</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>5</td>
+      <td>247</td>
+      <td>5.0</td>
+      <td>847435337</td>
+      <td>Heavenly Creatures (1994)</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>5</td>
+      <td>595</td>
+      <td>5.0</td>
+      <td>847434832</td>
+      <td>Beauty and the Beast (1991)</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>5</td>
+      <td>594</td>
+      <td>5.0</td>
+      <td>847435238</td>
+      <td>Snow White and the Seven Dwarfs (1937)</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>5</td>
+      <td>590</td>
+      <td>5.0</td>
+      <td>847434747</td>
+      <td>Dances with Wolves (1990)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p style="margin-bottom:30;">Now, let's predict which movies userId 5 will also like based on their previous ratings. We need to do the following:</p><ul>
+<li>get row from $X$ which represents userId=5</li>
+<li>sort their predicted ratings in descending order</li>
+</ul>
+<p>We can use <code>np.argsort()</code> to grab top $N$ indices for <code>userId=5</code>.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[157]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">top_N</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">movie_titles</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">movies</span><span class="p">[</span><span class="s1">&#39;movieId&#39;</span><span class="p">],</span> <span class="n">movies</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]))</span>
+
+<span class="n">top_N_indices</span> <span class="o">=</span> <span class="n">new_X</span><span class="p">[</span><span class="n">user_mapper</span><span class="p">[</span><span class="n">userId</span><span class="p">]]</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[</span><span class="o">-</span><span class="n">top_N</span><span class="p">:][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Top </span><span class="si">{top_N}</span><span class="s2"> Recommendations for UserId </span><span class="si">{userId}</span><span class="s2">:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">top_N_indices</span><span class="p">:</span>
+    <span class="n">movie_id</span> <span class="o">=</span> <span class="n">movie_inv_mapper</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">movie_titles</span><span class="p">[</span><span class="n">movie_id</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Top 10 Recommendations for UserId 5:
+Puppet Masters, The (1994)
+Heat (1995)
+Beautiful Girls (1996)
+Chasers (1994)
+Timecop (1994)
+Little Women (1994)
+Birdcage, The (1996)
+Twelve Monkeys (a.k.a. 12 Monkeys) (1995)
+Sliver (1993)
+Wallace &amp; Gromit: A Close Shave (1995)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 </div>
 </div>
 
