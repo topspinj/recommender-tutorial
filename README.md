@@ -27,11 +27,5 @@ More information on each part can be found in the descriptions below.
 |Key concepts|collaborative filtering, content-based filtering, k-Nearest neighbors, cosine similarity|
 |Requirements|Python 3.6+, Jupyter Lab, numpy, pandas, matplotlib, seaborn, scikit-learn|
 |Tutorial link|[Jupyter Notebook](part-1-item-item-recommender.ipynb)|
-|Relevant slides|[slides here](https://github.com/topspinj/presentations/recommendation-systems)|
 |Resources|[Item-item collaborative filtering](https://www.wikiwand.com/en/Item-item_collaborative_filtering), [Amazon.com Recommendations](https://www.cs.umd.edu/~samir/498/Amazon-Recommendations.pdf), [Various Implementations of Collaborative Filtering](https://towardsdatascience.com/various-implementations-of-collaborative-filtering-100385c6dfe0) |
-
-### Slides
-
-- [A Brief Intro to Recommendation Systems](https://github.com/topspinj/presentations/recommendation-systems) (PyLadies workshop)
-
 
