@@ -38,7 +38,7 @@ def create_X(df):
     
     return X, user_mapper, movie_mapper, user_inv_mapper, movie_inv_mapper
 
-def find_similar_movies(movie_id, X, k, metric='cosine', show_distance=False):
+def find_similar_movies(movie_id, X, k, movie_mapper, movie_inv_mapper, metric='cosine', show_distance=False):
     """
     Finds k-nearest neighbours for a given movie id.
     
