@@ -1,0 +1,19 @@
+install:
+    - pip install jupyter
+    - cd presentation
+    - wget https://github.com/hakimel/reveal.js/archive/master.zip
+    - unzip master.zip
+    - mv reveal.js-master reveal.js
+
+script:
+    - jupyter nbconvert intro_to_recommenders_slides.ipynb --to slides
+
+after_success: |
+    if [ -n "$GITHUB_API_KEY" ]; then
+    git checkout --orphan gh-pages
+    git rm -rf --cached .
+    mv intro_to_recommenders_slides.slides.html index.html
+    git add -f --ignore-errors index.html images reveal.js
+    git -c user.name='travis' -c user.email='travis' commit -m init
+    git push -f -q https://$GITHUB_USER:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG gh-pages
+    fi
