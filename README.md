@@ -13,9 +13,9 @@ The series is divided into 5 parts:
 
 1. [Building an item-item recommender with collaborative filtering](#part-1-building-an-item-item-recommender-with-collaborative-filtering)
 2. [Handling the Cold Start Problem with Content-based Filtering](#part-2-handling-the-cold-start-problem-with-content-based-filtering)
-3. [Enhancing the Quality of Recommendations with Matrix Factorizationm](#part-3-enhancing-the-quality-of-recommendations-with-matrix-factorization)
-4. [Building an implicit-feedback recommendation system](#part-4-building-an-implicit-feedback-recommendation-system)
-5. [Evaluating the performance of a recommendation model](#part-5-evaluating-the-performance-of-a-recommendation-model) 
+3. [Enhancing the Quality of Recommendations with Matrix Factorization](#part-3-enhancing-the-quality-of-recommendations-with-matrix-factorization) (coming soon)
+4. [Building an implicit-feedback recommendation system](#part-4-building-an-implicit-feedback-recommendation-system) (coming soon)
+5. [Evaluating the performance of a recommendation model](#part-5-evaluating-the-performance-of-a-recommendation-model) (coming soon)
 
 More information on each part can be found in the descriptions below.
 
@@ -29,3 +29,12 @@ More information on each part can be found in the descriptions below.
 |Tutorial link|[Jupyter Notebook](part-1-item-item-recommender.ipynb)|
 |Resources|[Item-item collaborative filtering](https://www.wikiwand.com/en/Item-item_collaborative_filtering), [Amazon.com Recommendations](https://www.cs.umd.edu/~samir/498/Amazon-Recommendations.pdf), [Various Implementations of Collaborative Filtering](https://towardsdatascience.com/various-implementations-of-collaborative-filtering-100385c6dfe0) |
 
+
+### Part 2: Handling the Cold Start Problem with Content-based Filtering
+
+| |Description |
+|:-----------|:----------|
+|Objective|Content-based filtering is a way to handle the cold-start problem by generating recommendations based on user and item features rather than interactions. In this tutorial, we will build an item-item recommendation system using movie features.|
+|Key concepts|content-based filtering, cosine similarity|
+|Requirements|Python 3.6+, Jupyter Lab, numpy, pandas, matplotlib, seaborn, scikit-learn, fuzzywuzzy|
+|Tutorial link|[Jupyter Notebook](part-2-cold-start-problem.ipynb)|
