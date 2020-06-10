@@ -9,13 +9,12 @@ This series of tutorials explores different types of recommendation systems and 
 
 We will build various recommendation systems using data from the [MovieLens](https://movielens.org/) database. You will need Jupyter Lab to run the notebooks for each part of this series. Alternatively, you can also use Google’s new [colab platform](https://colab.research.google.com) which allows you to run a Jupyter notebook environment in the cloud. You won't need to install any local dependencies; however, you will need a gmail account. 
 
-The series is divided into 5 parts:
+The series is divided into 3 parts:
 
-1. [Building an item-item recommender with collaborative filtering](#part-1-building-an-item-item-recommender-with-collaborative-filtering)
+1. [Building an Item-Item Recommender with Collaborative Filtering](#part-1-building-an-item-item-recommender-with-collaborative-filtering)
 2. [Handling the Cold Start Problem with Content-based Filtering](#part-2-handling-the-cold-start-problem-with-content-based-filtering)
-3. [Enhancing the Quality of Recommendations with Matrix Factorization](#part-3-enhancing-the-quality-of-recommendations-with-matrix-factorization) (coming soon)
-4. [Building an implicit-feedback recommendation system](#part-4-building-an-implicit-feedback-recommendation-system) (coming soon)
-5. [Evaluating the performance of a recommendation model](#part-5-evaluating-the-performance-of-a-recommendation-model) (coming soon)
+3. [Building an Implicit Feedback Recommender System](#part-3-building-an-implicit-feedback-recommender-system)
+
 
 More information on each part can be found in the descriptions below.
 
@@ -34,7 +33,15 @@ More information on each part can be found in the descriptions below.
 
 | |Description |
 |:-----------|:----------|
-|Objective|Content-based filtering is a way to handle the cold-start problem by generating recommendations based on user and item features rather than interactions. In this tutorial, we will build an item-item recommendation system using movie features.|
-|Key concepts|content-based filtering, cosine similarity|
-|Requirements|Python 3.6+, Jupyter Lab, numpy, pandas, matplotlib, seaborn, scikit-learn, fuzzywuzzy|
+|Objective|Collaborative filtering fails to incorporate new users who haven't rated yet and new items that don't have any ratings or reviews. This is called the cold start problem. In this tutorial, we will learn about clustering techniques that are used to tackle the cold start problem of collaborative filtering.|
+|Requirements|Python 3.6+, Jupyter Lab, numpy, pandas, matplotlib, seaborn, scikit-learn|
 |Tutorial link|[Jupyter Notebook](part-2-cold-start-problem.ipynb)|
+
+
+### Part 3: Building an Implicit Feedback Recommender System
+
+| |Description |
+|:-----------|:----------|
+|Objective|Collaborative filtering fails to incorporate new users who haven't rated yet and new items that don't have any ratings or reviews. This is called the cold start problem. In this tutorial, we will learn about clustering techniques that are used to tackle the cold start problem of collaborative filtering.|
+|Requirements|Python 3.6+, Jupyter Lab, numpy, pandas, implicit|
+|Tutorial link|[Jupyter Notebook](part-3-implicit-feedback-recommender.ipynb)|
