@@ -42,6 +42,6 @@ More information on each part can be found in the descriptions below.
 
 | |Description |
 |:-----------|:----------|
-|Objective|Collaborative filtering fails to incorporate new users who haven't rated yet and new items that don't have any ratings or reviews. This is called the cold start problem. In this tutorial, we will learn about clustering techniques that are used to tackle the cold start problem of collaborative filtering.|
+|Objective|Unlike explicit feedback (e.g., user ratings), implicit feedback infers a user's degree of preference toward an item by looking at their indirect interactions with that item. In this tutorial, we will investigate a recommender model that specifically handles implicit feedback datasets.|
 |Requirements|Python 3.6+, Jupyter Lab, numpy, pandas, implicit|
 |Tutorial link|[Jupyter Notebook](part-3-implicit-feedback-recommender.ipynb)|
